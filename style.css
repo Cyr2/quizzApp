@@ -107,7 +107,7 @@ li span {
 }
 
 input[type="radio"]:checked + label {
-  outline: 2px solid var(--secondary);
+  outline: .2rem solid var(--secondary);
 }
 
 input[type="radio"]:checked + label span {
@@ -116,7 +116,7 @@ input[type="radio"]:checked + label span {
 }
 
 input[type="radio"].correct:checked + label {
-  outline: 2px solid var(--correct);
+  outline: .2rem solid var(--correct);
 }
 
 input[type="radio"].correct:checked + label::after, .correctAnswer + label::after {
@@ -134,7 +134,7 @@ input[type="radio"].correct:checked + label span {
 }
 
 input[type="radio"].wrong:checked + label {
-  outline: 2px solid var(--wrong);
+  outline: .2rem solid var(--wrong);
 }
 
 input[type="radio"].wrong:checked + label::after {
@@ -159,7 +159,7 @@ input[type="radio"] {
   position: absolute;
 }
 
-.answered {
+.answered li {
   pointer-events: none;
 }
 
@@ -267,4 +267,12 @@ hgroup {
   flex-direction: column;
   gap: 1rem;
   color: var(--font-primary);
+}
+
+@media (min-width: 1440px) {
+  html { font-size: 130%; }
+  main {
+    flex-direction: row;
+    padding: 2rem 8.75rem;
+  }
 }

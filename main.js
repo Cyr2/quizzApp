@@ -32,14 +32,14 @@ function renderQuestion(id) {
     <hgroup>
       <p class="smallText">Question ${id + 1} of ${data.length}</p>
       <h3>${data[id].question.text}</h3>
+      <div class="progress">
+        <progress max="100" value="${((id + 1) / data.length) * 100}"></progress>
+      </div>
     </hgroup>
-    <div class="progress">
-      <progress max="100" value="${((id + 1) / data.length) * 100}"></progress>
-    </div>
     <ul class="questions">
       ${rdmQuestion(id)}
+      <button id="submit" class="primaryButton">Submit Answer</button>
     </ul>
-    <button id="submit" class="primaryButton">Submit Answer</button>
   `;
 
   const submitBtn = document.querySelector('#submit');
