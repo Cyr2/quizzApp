@@ -1,5 +1,6 @@
 // Fetch Data
 import { fetchData } from './useFetch';
+const themeBtn = document.querySelector('#theme');
 let data = [];
 let score = 0;
 
@@ -11,6 +12,12 @@ fetchData().then(fetchedData => {
 const app = document.querySelector('#app');
 // HomePage
 const startBtn = document.querySelector('#start');
+
+
+// Theme
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('darkMode');
+});
 
 
 startBtn.addEventListener('click', start)
