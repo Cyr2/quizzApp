@@ -1,16 +1,16 @@
 // Fetch Data
 import { fetchData } from './useFetch';
-const THEME_BTN_SELECTOR = '#theme';
-const APP_SELECTOR = '#app';
-const HOME_BTN_SELECTOR = '#home';
-const START_BTN_SELECTOR = '#start';
-const themeBtn = document.querySelector(THEME_BTN_SELECTOR);
+const themeBtnSeletor = '#theme';
+const appSelector = '#app';
+const homeBtnSeletor = '#home';
+const startBtnSeletor = '#start';
+const themeBtn = document.querySelector(themeBtnSeletor);
 let data = [];
 
 // Init element
-const app = document.querySelector(APP_SELECTOR);
-const homeBtn = document.querySelector(HOME_BTN_SELECTOR);
-const startBtn = document.querySelector(START_BTN_SELECTOR);
+const app = document.querySelector(appSelector);
+const homeBtn = document.querySelector(homeBtnSeletor);
+const startBtn = document.querySelector(startBtnSeletor);
 
 fetchData().then(fetchedData => {
   data = [...fetchedData];
