@@ -51,6 +51,17 @@ body, button, input {
   border-radius: 0.75rem;
   box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
   cursor: pointer;
+  box-shadow: #00000046 0px 3px 1px;
+  transition: .15s ease-in-out;
+}
+
+.primaryButton:hover {
+  box-shadow: 0px 0px 1px;
+  transform: translateY(3px);
+}
+
+.primaryButton:disabled {
+  cursor: not-allowed;
 }
 
 .smallText {
@@ -103,7 +114,7 @@ li span {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0.50rem;
+  border-radius: 0.5rem;
 }
 
 input[type="radio"]:checked + label {
@@ -163,6 +174,10 @@ input[type="radio"] {
   pointer-events: none;
 }
 
+.answered {
+  cursor: not-allowed;
+}
+
 .progress {
   width: 100%;
   padding: 0.25rem;
@@ -215,8 +230,28 @@ progress[value]::-webkit-progress-value {
 header {
   display: flex;
   padding: 1rem 1.5rem;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
+  user-select: none;
+}
+
+header button {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.125rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--font-primary);
+}
+
+header button span {
+  font-size: 1.5rem;
+  background-color: #F6E7FF;
+  border-radius: .5rem;
+  padding: 0.3rem;
 }
 
 .switch {
@@ -241,6 +276,11 @@ header {
   transition: 0.3s ease-in-out;
 }
 
+.switchContainer {
+  display: flex;
+  align-items: center;
+}
+
 .theme:checked + .selector {
   left: 1rem;
 }
@@ -252,6 +292,7 @@ header {
   position: absolute;
   left: 0;
   z-index: 99;
+  cursor: pointer;
 }
 
 main {
@@ -269,10 +310,17 @@ hgroup {
   color: var(--font-primary);
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1000px) {
   html { font-size: 130%; }
+  header {
+    padding: 1rem 8.75rem;
+  }
   main {
     flex-direction: row;
     padding: 2rem 8.75rem;
+    width: 100%;
+  }
+  hgroup, .questions, .primaryButton {
+    width: 50%;
   }
 }
